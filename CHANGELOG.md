@@ -22,6 +22,8 @@
 
 <details>
 
+-   [`b5bff35`](https://github.com/stdlib-js/stdlib/commit/b5bff35c7183d5ccd4cf0349c1a3be06b34e844f) - **docs:** update copy _(by Athan Reines)_
+-   [`fccf762`](https://github.com/stdlib-js/stdlib/commit/fccf76232823c1bbbef2152aa3c1488210a5a12b) - **docs:** update copy _(by Athan Reines)_
 -   [`3f4de77`](https://github.com/stdlib-js/stdlib/commit/3f4de77d333dea3962dec5f53858a4a2db86bd63) - **feat:** add `ndarray/includes` _(by Athan Reines)_
 
 </details>
