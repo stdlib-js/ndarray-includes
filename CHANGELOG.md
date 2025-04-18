@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-04-10)
+## Unreleased (2025-04-18)
 
 <section class="features">
 
@@ -20,6 +20,7 @@
 
 ### Bug Fixes
 
+-   [`07710f8`](https://github.com/stdlib-js/stdlib/commit/07710f849133f4414b37a19a96fb3ccdad7538d5) - check for duplicate indices
 -   [`605c582`](https://github.com/stdlib-js/stdlib/commit/605c5828fe6efeae442d8df17d29404d2acb759f) - update error message
 
 </section>
@@ -32,6 +33,8 @@
 
 <details>
 
+-   [`07710f8`](https://github.com/stdlib-js/stdlib/commit/07710f849133f4414b37a19a96fb3ccdad7538d5) - **fix:** check for duplicate indices _(by Athan Reines)_
+-   [`dcd9428`](https://github.com/stdlib-js/stdlib/commit/dcd9428900fbd2bdfe3505e71fa00ccd08a7efce) - **refactor:** fix argument _(by Athan Reines)_
 -   [`605c582`](https://github.com/stdlib-js/stdlib/commit/605c5828fe6efeae442d8df17d29404d2acb759f) - **fix:** update error message _(by Athan Reines)_
 -   [`b5bff35`](https://github.com/stdlib-js/stdlib/commit/b5bff35c7183d5ccd4cf0349c1a3be06b34e844f) - **docs:** update copy _(by Athan Reines)_
 -   [`fccf762`](https://github.com/stdlib-js/stdlib/commit/fccf76232823c1bbbef2152aa3c1488210a5a12b) - **docs:** update copy _(by Athan Reines)_
