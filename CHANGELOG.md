@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-05-12)
+## Unreleased (2025-05-31)
 
 <section class="features">
 
@@ -33,6 +33,7 @@
 
 <details>
 
+-   [`77957f2`](https://github.com/stdlib-js/stdlib/commit/77957f2a9bb3d815b7bc92d07d3f6fdebce44f33) - **docs:** update examples _(by Athan Reines)_
 -   [`07710f8`](https://github.com/stdlib-js/stdlib/commit/07710f849133f4414b37a19a96fb3ccdad7538d5) - **fix:** check for duplicate indices _(by Athan Reines)_
 -   [`dcd9428`](https://github.com/stdlib-js/stdlib/commit/dcd9428900fbd2bdfe3505e71fa00ccd08a7efce) - **refactor:** fix argument _(by Athan Reines)_
 -   [`605c582`](https://github.com/stdlib-js/stdlib/commit/605c5828fe6efeae442d8df17d29404d2acb759f) - **fix:** update error message _(by Athan Reines)_
