@@ -41,49 +41,47 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-includes
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import includes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@esm/index.mjs';
-```
-
-You can also import the following named exports from the package:
-
-```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@esm/index.mjs';
+var includes = require( '@stdlib/ndarray-includes' );
 ```
 
 #### includes( x, searchElement\[, options] )
 
 Tests whether an [`ndarray`][@stdlib/ndarray/ctor] contains a specified value along one or more dimensions.
 
-<!-- eslint-disable max-len -->
-
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@esm/index.mjs';
-
-// Create a data buffer:
-var xbuf = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ] );
-
-// Define the shape of the input array:
-var sh = [ 3, 1, 2 ];
-
-// Define the array strides:
-var sx = [ 4, 4, 1 ];
-
-// Define the index offset:
-var ox = 1;
+var array = require( '@stdlib/ndarray-array' );
 
 // Create an input ndarray:
-var x = new ndarray( 'float64', xbuf, sh, sx, ox, 'row-major' );
+var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
+// returns <ndarray>
 
 // Perform reduction:
-var out = includes( x, 6.0 );
+var out = includes( x, 5.0 );
 // returns <ndarray>
 
 var v = out.get();
@@ -103,98 +101,56 @@ The function accepts the following `options`:
 
 By default, the function performs a reduction over all elements in a provided [`ndarray`][@stdlib/ndarray/ctor]. To reduce specific dimensions, set the `dims` option.
 
-<!-- eslint-disable max-len -->
-
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-
-// Create a data buffer:
-var xbuf = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ] );
-
-// Define the shape of the input array:
-var sh = [ 3, 1, 2 ];
-
-// Define the array strides:
-var sx = [ 4, 4, 1 ];
-
-// Define the index offset:
-var ox = 1;
+var array = require( '@stdlib/ndarray-array' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
-var x = new ndarray( 'float64', xbuf, sh, sx, ox, 'row-major' );
+var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
+// returns <ndarray>
 
 // Perform reduction:
-var out = includes( x, 6.0, {
+var out = includes( x, 5.0, {
     'dims': [ 1, 2 ]
 });
 // returns <ndarray>
 
 var v = ndarray2array( out );
-// returns [ false, true, false ]
+// returns [ false, false, true ]
 ```
 
 By default, the function returns an [`ndarray`][@stdlib/ndarray/ctor] having a shape matching only the non-reduced dimensions of the input [`ndarray`][@stdlib/ndarray/ctor] (i.e., the reduced dimensions are dropped). To include the reduced dimensions as singleton dimensions in the output [`ndarray`][@stdlib/ndarray/ctor], set the `keepdims` option to `true`.
 
-<!-- eslint-disable max-len -->
-
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-
-// Create a data buffer:
-var xbuf = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ] );
-
-// Define the shape of the input array:
-var sh = [ 3, 1, 2 ];
-
-// Define the array strides:
-var sx = [ 4, 4, 1 ];
-
-// Define the index offset:
-var ox = 1;
+var array = require( '@stdlib/ndarray-array' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
-var x = new ndarray( 'float64', xbuf, sh, sx, ox, 'row-major' );
+var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
+// returns <ndarray>
 
 // Perform reduction:
-var out = includes( x, 6.0, {
+var out = includes( x, 5.0, {
     'dims': [ 1, 2 ],
     'keepdims': true
 });
 // returns <ndarray>
 
 var v = ndarray2array( out );
-// returns [ [ [ false ] ], [ [ true ] ], [ [ false ] ] ]
+// returns [ [ [ false ] ], [ [ false ] ], [ [ true ] ] ]
 ```
 
 #### includes.assign( x, searchElement, out\[, options] )
 
 Tests whether an [`ndarray`][@stdlib/ndarray/ctor] contains a specified value along one or more dimensions and assigns results to a provided output [`ndarray`][@stdlib/ndarray/ctor].
 
-<!-- eslint-disable max-len -->
-
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@esm/index.mjs';
-import empty from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-empty@esm/index.mjs';
-
-// Create a data buffer:
-var xbuf = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ] );
-
-// Define the shape of the input array:
-var sh = [ 3, 1, 2 ];
-
-// Define the array strides:
-var sx = [ 4, 4, 1 ];
-
-// Define the index offset:
-var ox = 1;
+var array = require( '@stdlib/ndarray-array' );
+var empty = require( '@stdlib/ndarray-empty' );
 
 // Create an input ndarray:
-var x = new ndarray( 'float64', xbuf, sh, sx, ox, 'row-major' );
+var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
+// returns <ndarray>
 
 // Create an output ndarray:
 var y = empty( [], {
@@ -202,7 +158,7 @@ var y = empty( [], {
 });
 
 // Perform reduction:
-var out = includes.assign( x, 6.0, y );
+var out = includes.assign( x, 5.0, y );
 // returns <ndarray>
 
 var bool = ( out === y );
@@ -225,28 +181,14 @@ The function accepts the following `options`:
 
 By default, the function performs a reduction over all elements in a provided [`ndarray`][@stdlib/ndarray/ctor]. To reduce specific dimensions, set the `dims` option.
 
-<!-- eslint-disable max-len -->
-
 ```javascript
-import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@esm/index.mjs';
-import ndarray from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-ctor@esm/index.mjs';
-import empty from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-empty@esm/index.mjs';
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-
-// Create a data buffer:
-var xbuf = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ] );
-
-// Define the shape of the input array:
-var sh = [ 3, 1, 2 ];
-
-// Define the array strides:
-var sx = [ 4, 4, 1 ];
-
-// Define the index offset:
-var ox = 1;
+var array = require( '@stdlib/ndarray-array' );
+var empty = require( '@stdlib/ndarray-empty' );
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
 
 // Create an input ndarray:
-var x = new ndarray( 'float64', xbuf, sh, sx, ox, 'row-major' );
+var x = array( [ [ [ 1.0, 2.0 ] ], [ [ 3.0, 4.0 ] ], [ [ 5.0, 6.0 ] ] ] );
+// returns <ndarray>
 
 // Create an output ndarray:
 var y = empty( [ 3 ], {
@@ -254,7 +196,7 @@ var y = empty( [ 3 ], {
 });
 
 // Perform reduction:
-var out = includes.assign( x, 6.0, y, {
+var out = includes.assign( x, 5.0, y, {
     'dims': [ 1, 2 ]
 });
 
@@ -262,7 +204,7 @@ var bool = ( out === y );
 // returns true
 
 var v = ndarray2array( y );
-// returns [ false, true, false ]
+// returns [ false, false, true ]
 ```
 
 </section>
@@ -281,17 +223,12 @@ var v = ndarray2array( y );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform' ).factory;
-import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
-import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@esm/index.mjs';
-import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@esm/index.mjs';
-import includes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' ).factory;
+var ndarray2array = require( '@stdlib/ndarray-to-array' );
+var fillBy = require( '@stdlib/ndarray-fill-by' );
+var zeros = require( '@stdlib/ndarray-zeros' );
+var includes = require( '@stdlib/ndarray-includes' );
 
 var x = zeros( [ 2, 4, 5 ], {
     'dtype': 'float64'
@@ -351,10 +288,6 @@ y = includes( x, 8, {
 });
 console.log( 'includes(x[:,:,:], 8) =' );
 console.log( ndarray2array( y ) );
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -376,7 +309,7 @@ console.log( ndarray2array( y ) );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -439,13 +372,13 @@ Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 [stdlib-license]: https://raw.githubusercontent.com/stdlib-js/ndarray-includes/main/LICENSE
 
-[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor/tree/esm
+[@stdlib/ndarray/ctor]: https://github.com/stdlib-js/ndarray-ctor
 
-[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes/tree/esm
+[@stdlib/ndarray/dtypes]: https://github.com/stdlib-js/ndarray-dtypes
 
-[@stdlib/ndarray/mostly-safe-casts]: https://github.com/stdlib-js/ndarray-mostly-safe-casts/tree/esm
+[@stdlib/ndarray/mostly-safe-casts]: https://github.com/stdlib-js/ndarray-mostly-safe-casts
 
-[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes/tree/esm
+[@stdlib/ndarray/base/broadcast-shapes]: https://github.com/stdlib-js/ndarray-base-broadcast-shapes
 
 <!-- <related-links> -->
 
