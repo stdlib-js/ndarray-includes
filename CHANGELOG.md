@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-05-31)
+## Unreleased (2025-09-18)
 
 <section class="features">
 
@@ -20,6 +20,7 @@
 
 ### Bug Fixes
 
+-   [`6f6da0a`](https://github.com/stdlib-js/stdlib/commit/6f6da0afaa12ef31691ae659f6a005f140d81cd1) - add missing argument to format strings
 -   [`07710f8`](https://github.com/stdlib-js/stdlib/commit/07710f849133f4414b37a19a96fb3ccdad7538d5) - check for duplicate indices
 -   [`605c582`](https://github.com/stdlib-js/stdlib/commit/605c5828fe6efeae442d8df17d29404d2acb759f) - update error message
 
@@ -33,6 +34,7 @@
 
 <details>
 
+-   [`6f6da0a`](https://github.com/stdlib-js/stdlib/commit/6f6da0afaa12ef31691ae659f6a005f140d81cd1) - **fix:** add missing argument to format strings _(by Philipp Burckhardt)_
 -   [`77957f2`](https://github.com/stdlib-js/stdlib/commit/77957f2a9bb3d815b7bc92d07d3f6fdebce44f33) - **docs:** update examples _(by Athan Reines)_
 -   [`07710f8`](https://github.com/stdlib-js/stdlib/commit/07710f849133f4414b37a19a96fb3ccdad7538d5) - **fix:** check for duplicate indices _(by Athan Reines)_
 -   [`dcd9428`](https://github.com/stdlib-js/stdlib/commit/dcd9428900fbd2bdfe3505e71fa00ccd08a7efce) - **refactor:** fix argument _(by Athan Reines)_
@@ -51,9 +53,10 @@
 
 ### Contributors
 
-A total of 1 person contributed to this release. Thank you to this contributor:
+A total of 2 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
+-   Philipp Burckhardt
 
 </section>
 
