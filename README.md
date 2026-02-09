@@ -48,13 +48,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import includes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@esm/index.mjs';
+import includes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@v0.1.1-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@esm/index.mjs';
+import { assign } from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@v0.1.1-esm/index.mjs';
 ```
 
 #### includes( x, searchElement\[, options] )
@@ -221,7 +221,7 @@ var discreteUniform = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-bas
 import ndarray2array from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-to-array@esm/index.mjs';
 import fillBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-fill-by@esm/index.mjs';
 import zeros from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-zeros@esm/index.mjs';
-import includes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@esm/index.mjs';
+import includes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-includes@v0.1.1-esm/index.mjs';
 
 var x = zeros( [ 2, 4, 5 ], {
     'dtype': 'float64'
